@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKd3vXDXbtM.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwA.woff2') format('woff2');
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-charcoal: #1a1a1a;
+  --color-off-white: #f5f0eb;
+  --color-warm-gray: #2a2725;
+  --color-light-gray: #e8e2dc;
+  --color-wood-gold: #8B6914;
+  --color-wood-dark: #5C4033;
+  --color-wood-light: #C4A265;
+  --color-wood-pale: #D4C5A9;
+  --color-brand-red: #8B0000;
+  --color-brand-red-light: #A52A2A;
+  --color-brand-red-dark: #5a0000;
+  --color-brand-black: #111111;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-charcoal: var(--color-charcoal);
+  --color-off-white: var(--color-off-white);
+  --color-warm-gray: var(--color-warm-gray);
+  --color-light-gray: var(--color-light-gray);
+  --color-wood-gold: var(--color-wood-gold);
+  --color-wood-dark: var(--color-wood-dark);
+  --color-wood-light: var(--color-wood-light);
+  --color-wood-pale: var(--color-wood-pale);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-red-light: var(--color-brand-red-light);
+  --color-brand-red-dark: var(--color-brand-red-dark);
+  --color-brand-black: var(--color-brand-black);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1a;
+  color: #f5f0eb;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection color */
+::selection {
+  background-color: #8B0000;
+  color: #f5f0eb;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #5C4033;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B6914;
+}
+
+/* Wood grain texture overlay utility */
+.wood-grain-overlay {
+  position: relative;
+}
+.wood-grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
