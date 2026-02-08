@@ -6,21 +6,8 @@ import Button from '@/components/ui/Button'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with parallax-feel gradient & wood texture */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-brand-black to-warm-gray" />
-
-      {/* Real wood grain background */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url("/images/wood-types/wood-type-2.jpeg")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
