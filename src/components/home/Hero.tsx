@@ -9,11 +9,11 @@ export default function Hero() {
       {/* Background with parallax-feel gradient & wood texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-brand-black to-warm-gray" />
 
-      {/* Animated wood grain bg image */}
+      {/* Real wood grain background */}
       <div
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80")`,
+          backgroundImage: `url("/images/wood-types/wood-type-2.jpeg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

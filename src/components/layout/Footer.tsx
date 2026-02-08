@@ -5,6 +5,7 @@ const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'Our Story' },
   { href: '/products', label: 'Products' },
+  { href: '/contact', label: 'Contact' },
   { href: '/cart', label: 'Cart' },
 ]
 
@@ -18,20 +19,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="relative w-64 h-16">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logos/banner.jpeg"
                 alt="Zaichik Crafts"
-                width={36}
-                height={36}
-                className="rounded-full"
+                fill
+                className="object-contain object-left"
+                sizes="256px"
               />
-              <span className="font-heading text-xl text-off-white">
-                ZAICHIK CRAFTS
-              </span>
             </div>
             <p className="text-off-white/60 text-sm leading-relaxed max-w-xs">
-              Handcrafted with heritage. Second-generation American woodworking by Vannya Sokolov.
+              Third-generation American woodworking by Vannya Sokolov. Old-world heritage, built to last.
             </p>
           </div>
 
@@ -58,7 +56,12 @@ export default function Footer() {
             <h3 className="font-heading text-sm uppercase tracking-widest text-wood-gold mb-4">
               Get In Touch
             </h3>
-            <div className="space-y-2 text-sm text-off-white/60">
+            <div className="space-y-3 text-sm text-off-white/60">
+              <p>
+                <a href="tel:+15185277449" className="text-wood-gold hover:underline text-base font-heading">
+                  (518) 527-7449
+                </a>
+              </p>
               <p>hello@zaichik-crafts.com</p>
               <div className="flex gap-4 pt-3">
                 <a
@@ -94,7 +97,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Zaichik Crafts. All rights reserved.
           </p>
           <p className="text-off-white/30 text-xs italic font-heading">
-            Crafted by hand. Built with pride.
+            Old-world heritage. American craftsmanship.
           </p>
         </div>
       </div>

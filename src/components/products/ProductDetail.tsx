@@ -9,28 +9,10 @@ import Card from '@/components/ui/Card'
 import { Product, formatPrice } from '@/lib/products'
 import { useCart } from '@/lib/cart-context'
 
-const placeholderImages: Record<string, string> = {
-  'heritage-dining-table': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-  'craftsman-coffee-table': 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=800&q=80',
-  'workshop-end-table': 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80',
-  'heirloom-bookshelf': 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80',
-  'floating-wall-shelf-set': 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
-  'artisan-cutting-board': 'https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=800&q=80',
-  'end-grain-butcher-block': 'https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=800&q=80',
-  'hand-carved-bowl': 'https://images.unsplash.com/photo-1416339684178-3a239570f315?w=800&q=80',
-  'wooden-serving-tray': 'https://images.unsplash.com/photo-1416339684178-3a239570f315?w=800&q=80',
-  'live-edge-console-table': 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80',
-  'rustic-coat-rack': 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
-  'custom-commission': 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80',
-}
-
-function getProductImage(slug: string): string {
-  return placeholderImages[slug] || 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80'
-}
-
 export default function ProductDetail({ product, relatedProducts }: { product: Product; relatedProducts: Product[] }) {
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
+  const [activeImage, setActiveImage] = useState(0)
   const { dispatch } = useCart()
   const isCustom = product.price === 0
 
@@ -60,7 +42,7 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
       <section className="py-12 md:py-20 bg-charcoal">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-            {/* Image */}
+            {/* Images */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -68,7 +50,7 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
             >
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src={getProductImage(product.slug)}
+                  src={product.images[activeImage]}
                   alt={product.name}
                   fill
                   className="object-cover"
@@ -76,6 +58,30 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
                   priority
                 />
               </div>
+              {/* Thumbnail strip */}
+              {product.images.length > 1 && (
+                <div className="flex gap-3 mt-4">
+                  {product.images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(idx)}
+                      className={`relative w-20 h-16 rounded overflow-hidden transition-all duration-200 ${
+                        activeImage === idx
+                          ? 'ring-2 ring-wood-gold opacity-100'
+                          : 'opacity-50 hover:opacity-80'
+                      }`}
+                    >
+                      <Image
+                        src={img}
+                        alt={`${product.name} view ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="80px"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </motion.div>
 
             {/* Info */}
@@ -91,7 +97,7 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
                 {product.name}
               </h1>
               <p className="text-brand-red font-heading text-3xl mb-6">
-                {isCustom ? 'Starting at $500' : formatPrice(product.price)}
+                {isCustom ? 'Starting at $100' : formatPrice(product.price)}
               </p>
               <p className="text-off-white/70 text-base leading-relaxed mb-8 font-body">
                 {product.shortDescription}
@@ -155,14 +161,19 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
                   </Button>
                 </div>
               ) : (
-                <Button
-                  variant="primary"
-                  size="lg"
-                  fullWidth
-                  href="mailto:hello@zaichik-crafts.com?subject=Custom Commission Inquiry"
-                >
-                  Request a Quote
-                </Button>
+                <div className="space-y-3">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    fullWidth
+                    href="/contact"
+                  >
+                    Request a Custom Piece
+                  </Button>
+                  <p className="text-off-white/40 text-sm text-center font-body">
+                    Or call directly: <a href="tel:+15185277449" className="text-wood-gold hover:underline">(518) 527-7449</a>
+                  </p>
+                </div>
               )}
             </motion.div>
           </div>
@@ -198,7 +209,7 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
                 <Card key={p.id}>
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
-                      src={getProductImage(p.slug)}
+                      src={p.images[0]}
                       alt={p.name}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-105"
@@ -207,7 +218,7 @@ export default function ProductDetail({ product, relatedProducts }: { product: P
                   </div>
                   <div className="p-5">
                     <h3 className="font-heading text-lg text-off-white mb-1">{p.name}</h3>
-                    <p className="text-wood-gold font-heading">{p.price === 0 ? 'From $500' : formatPrice(p.price)}</p>
+                    <p className="text-wood-gold font-heading">{p.price === 0 ? 'From $100' : formatPrice(p.price)}</p>
                     <Button variant="secondary" size="sm" href={`/products/${p.slug}`} className="mt-3">
                       View Details
                     </Button>

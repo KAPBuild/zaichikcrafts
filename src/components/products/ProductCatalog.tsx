@@ -7,25 +7,6 @@ import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import { Product, formatPrice } from '@/lib/products'
 
-const placeholderImages: Record<string, string> = {
-  'heritage-dining-table': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
-  'craftsman-coffee-table': 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&q=80',
-  'workshop-end-table': 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80',
-  'heirloom-bookshelf': 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&q=80',
-  'floating-wall-shelf-set': 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
-  'artisan-cutting-board': 'https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=600&q=80',
-  'end-grain-butcher-block': 'https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=600&q=80',
-  'hand-carved-bowl': 'https://images.unsplash.com/photo-1416339684178-3a239570f315?w=600&q=80',
-  'wooden-serving-tray': 'https://images.unsplash.com/photo-1416339684178-3a239570f315?w=600&q=80',
-  'live-edge-console-table': 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80',
-  'rustic-coat-rack': 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80',
-  'custom-commission': 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80',
-}
-
-function getProductImage(slug: string): string {
-  return placeholderImages[slug] || 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80'
-}
-
 export default function ProductCatalog({ products, categories }: { products: Product[]; categories: string[] }) {
   const [activeFilter, setActiveFilter] = useState('All')
 
@@ -100,7 +81,7 @@ export default function ProductCatalog({ products, categories }: { products: Pro
                   <Card>
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
-                        src={getProductImage(product.slug)}
+                        src={product.images[0]}
                         alt={product.name}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-105"
@@ -125,7 +106,7 @@ export default function ProductCatalog({ products, categories }: { products: Pro
                       </p>
                       <div className="flex items-center justify-between">
                         <span className="text-wood-gold font-heading text-lg">
-                          {product.price === 0 ? 'From $500' : formatPrice(product.price)}
+                          {product.price === 0 ? 'From $100' : formatPrice(product.price)}
                         </span>
                         <Button
                           variant="secondary"

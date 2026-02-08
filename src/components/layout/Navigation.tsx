@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/products', label: 'Products' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navigation() {
@@ -45,7 +46,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logos/logo.jpeg"
               alt="Zaichik Crafts logo"
               width={40}
               height={40}

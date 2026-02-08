@@ -6,19 +6,6 @@ import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import { Product, formatPrice } from '@/lib/products'
 
-// Placeholder images for products (royalty-free woodworking images)
-const placeholderImages: Record<string, string> = {
-  'heritage-dining-table': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
-  'craftsman-coffee-table': 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&q=80',
-  'heirloom-bookshelf': 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&q=80',
-  'artisan-cutting-board': 'https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=600&q=80',
-  'live-edge-console-table': 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80',
-}
-
-function getProductImage(slug: string): string {
-  return placeholderImages[slug] || 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80'
-}
-
 export default function FeaturedProducts({ products }: { products: Product[] }) {
   return (
     <section className="py-24 md:py-32 bg-charcoal">
@@ -50,7 +37,7 @@ export default function FeaturedProducts({ products }: { products: Product[] }) 
               <Card>
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src={getProductImage(product.slug)}
+                    src={product.images[0]}
                     alt={product.name}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"

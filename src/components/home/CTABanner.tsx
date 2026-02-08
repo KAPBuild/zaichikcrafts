@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Button from '@/components/ui/Button'
 
 export default function CTABanner() {
@@ -11,7 +12,7 @@ export default function CTABanner() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1920&q=80")`,
+          backgroundImage: `url("/images/wood-types/wood-type-1.jpeg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -31,15 +32,18 @@ export default function CTABanner() {
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-off-white mb-6">
             Ready for Something Built to Last?
           </h2>
-          <p className="text-off-white/60 text-lg mb-10 font-body">
+          <p className="text-off-white/60 text-lg mb-4 font-body">
             Every piece is made to order. Let&rsquo;s create something together.
           </p>
+          <p className="text-wood-gold text-lg mb-10 font-body">
+            Call <a href="tel:+15185277449" className="hover:underline underline-offset-4">(518) 527-7449</a> or send a message.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg" href="/products">
-              Browse the Shop
+            <Button variant="primary" size="lg" href="/contact">
+              Request a Custom Piece
             </Button>
-            <Button variant="ghost" size="lg" href="mailto:hello@zaichik-crafts.com">
-              Get in Touch
+            <Button variant="outline" size="lg" href="/products">
+              Browse the Shop
             </Button>
           </div>
         </motion.div>
