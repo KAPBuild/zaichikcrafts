@@ -22,7 +22,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-wood-gold uppercase tracking-[0.3em] text-sm mb-4 font-body"
         >
-          Third-Generation Craftsman
+          Meet the Maker
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

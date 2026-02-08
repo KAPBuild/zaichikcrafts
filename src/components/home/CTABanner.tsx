@@ -36,11 +36,11 @@ export default function CTABanner() {
             Every piece is made to order. Let&rsquo;s create something together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg" href="tel:+15185277449">
-              Call (518) 527-7449
+            <Button variant="primary" size="lg" href="/contact">
+              Contact Zaichik
             </Button>
-            <Button variant="outline" size="lg" href="/contact">
-              Request a Custom Piece
+            <Button variant="outline" size="lg" href="/products">
+              Browse the Shop
             </Button>
           </div>
         </motion.div>

@@ -29,7 +29,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-off-white/60 text-sm leading-relaxed max-w-xs">
-              Third-generation American woodworking by Vannya Sokolov. Old-world heritage, built to last.
+              Handcrafted American woodwork by Vannya Sokolov. Built to last.
             </p>
           </div>
 
