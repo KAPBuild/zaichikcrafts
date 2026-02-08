@@ -35,15 +35,12 @@ export default function CTABanner() {
           <p className="text-off-white/60 text-lg mb-4 font-body">
             Every piece is made to order. Let&rsquo;s create something together.
           </p>
-          <p className="text-wood-gold text-lg mb-10 font-body">
-            Call <a href="tel:+15185277449" className="hover:underline underline-offset-4">(518) 527-7449</a> or send a message.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg" href="/contact">
-              Request a Custom Piece
+            <Button variant="primary" size="lg" href="tel:+15185277449">
+              Call (518) 527-7449
             </Button>
-            <Button variant="outline" size="lg" href="/products">
-              Browse the Shop
+            <Button variant="outline" size="lg" href="/contact">
+              Request a Custom Piece
             </Button>
           </div>
         </motion.div>
