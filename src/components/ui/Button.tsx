@@ -22,21 +22,21 @@ interface ButtonProps {
 const variantStyles: Record<ButtonVariant, string> = {
   primary: [
     'bg-brand-red text-off-white',
-    'shadow-[0_4px_0_#5a0000,0_6px_12px_rgba(0,0,0,0.3)]',
-    'hover:shadow-[0_5px_0_#5a0000,0_8px_16px_rgba(0,0,0,0.35)] hover:-translate-y-[1px]',
-    'active:shadow-[0_1px_0_#5a0000,0_2px_4px_rgba(0,0,0,0.2)] active:translate-y-[3px]',
+    'shadow-[0_6px_0_#3d0000,0_10px_20px_rgba(0,0,0,0.4)]',
+    'hover:shadow-[0_7px_0_#3d0000,0_12px_24px_rgba(0,0,0,0.45)] hover:-translate-y-[2px]',
+    'active:shadow-[0_2px_0_#3d0000,0_3px_6px_rgba(0,0,0,0.25)] active:translate-y-[4px]',
   ].join(' '),
   secondary: [
     'bg-wood-dark text-off-white',
-    'shadow-[0_4px_0_#3d3530,0_6px_12px_rgba(0,0,0,0.3)]',
-    'hover:shadow-[0_5px_0_#3d3530,0_8px_16px_rgba(0,0,0,0.35)] hover:-translate-y-[1px]',
-    'active:shadow-[0_1px_0_#3d3530,0_2px_4px_rgba(0,0,0,0.2)] active:translate-y-[3px]',
+    'shadow-[0_6px_0_#2a2420,0_10px_20px_rgba(0,0,0,0.4)]',
+    'hover:shadow-[0_7px_0_#2a2420,0_12px_24px_rgba(0,0,0,0.45)] hover:-translate-y-[2px]',
+    'active:shadow-[0_2px_0_#2a2420,0_3px_6px_rgba(0,0,0,0.25)] active:translate-y-[4px]',
   ].join(' '),
   outline: [
-    'bg-transparent text-off-white border-2 border-off-white/30',
-    'shadow-[0_4px_0_rgba(90,70,60,0.5),0_6px_12px_rgba(0,0,0,0.2)]',
-    'hover:bg-off-white/10 hover:border-off-white/50 hover:shadow-[0_5px_0_rgba(90,70,60,0.5),0_8px_16px_rgba(0,0,0,0.25)] hover:-translate-y-[1px]',
-    'active:shadow-[0_1px_0_rgba(90,70,60,0.5),0_2px_4px_rgba(0,0,0,0.15)] active:translate-y-[3px]',
+    'bg-transparent text-off-white border-2 border-off-white/40',
+    'shadow-[0_6px_0_rgba(90,70,60,0.7),0_10px_20px_rgba(0,0,0,0.3)]',
+    'hover:bg-off-white/10 hover:border-off-white/60 hover:shadow-[0_7px_0_rgba(90,70,60,0.7),0_12px_24px_rgba(0,0,0,0.35)] hover:-translate-y-[2px]',
+    'active:shadow-[0_2px_0_rgba(90,70,60,0.7),0_3px_6px_rgba(0,0,0,0.2)] active:translate-y-[4px]',
   ].join(' '),
   ghost: [
     'bg-transparent text-off-white',

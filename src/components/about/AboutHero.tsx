@@ -44,9 +44,9 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-off-white/60 text-lg mt-4 font-body"
+          className="text-off-white/60 text-lg mt-4 font-body tracking-wide"
         >
-          Old-world heritage. American craftsmanship.
+          <span className="text-wood-gold">Old-world heritage.</span> American craftsmanship.
         </motion.p>
       </div>
     </section>

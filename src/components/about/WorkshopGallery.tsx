@@ -30,12 +30,12 @@ export default function WorkshopGallery() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-wood-gold uppercase tracking-[0.3em] text-sm mb-6 font-body">
-            The Foundation
+          <p className="text-wood-gold uppercase tracking-[0.3em] text-sm mb-4 font-body">
+            Our Promise
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl text-off-white mb-8">
-            Built by hand, built to stay.
-          </h2>
+          <p className="font-heading text-3xl md:text-4xl text-off-white mb-8 leading-relaxed">
+            <span className="text-wood-gold">Old-world heritage.</span> American craftsmanship.
+          </p>
           <p className="text-off-white/70 text-lg leading-relaxed font-body">
             Every piece that leaves my workshop is made in America, by me, using solid wood and techniques passed down through generations. That's not a marketing slogan. That's a guarantee.
           </p>
