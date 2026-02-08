@@ -5,25 +5,18 @@ import Image from 'next/image'
 
 const storyBeats = [
   {
-    title: 'The Father',
-    text: `I grew up with sawdust in my hair and the smell of fresh-cut oak. My father didn't just build furniture — he built things that mattered. Every chair, every table, every shelf came with a lesson. Measure twice. Respect the grain. Never rush the finish. His workshop was my classroom, and the wood was our language.`,
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
-    imageAlt: 'Woodworking workshop with hand tools',
+    title: 'The Craftsman',
+    text: `I'm Vannya Sokolov — friends call me Ivan. I came to America young, bringing just a few memories of my father and his woodworking. My mother and stepfather raised me here, and they taught me what really matters: hard work, honesty, and building something you can be proud of. I taught myself the craft, but those early memories of sawdust and hand tools never left me.`,
+    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80',
+    imageAlt: 'Vannya working in the workshop',
     reverse: false,
   },
   {
-    title: 'The Son',
-    text: `I took what my father taught me and built something new. Every piece I make carries his lessons — patience, precision, respect for the wood. But I'm not copying him. I'm taking those old-world techniques and building furniture for how people live now. Clean lines, honest materials, built right here in America. No shortcuts. No particle board. Just real wood and real work.`,
-    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80',
-    imageAlt: 'Craftsman working with wood plane',
-    reverse: true,
-  },
-  {
-    title: 'The Vision',
-    text: `Zaichik Crafts isn't just a business. It's a promise that real craftsmanship still exists, still matters, and is built right here in America. Every piece that leaves my workshop carries a piece of my family's story. I don't do trends. I build things that work and things that last. That's it.`,
+    title: 'The Promise',
+    text: `Zaichik Crafts is my promise that real craftsmanship still exists and still matters. No shortcuts. No particle board. No overseas factories. Just real wood, real work, and furniture built to last generations. When you buy from me, you're getting something made by hand — my hands — in my American workshop.`,
     image: 'https://images.unsplash.com/photo-1416339684178-3a239570f315?w=800&q=80',
     imageAlt: 'Beautiful finished wood furniture',
-    reverse: false,
+    reverse: true,
   },
 ]
 
