@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 
 export default function Hero() {
@@ -25,21 +24,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6"
-        >
-          <Image
-            src="/images/logo.jpg"
-            alt="Zaichik Crafts"
-            width={80}
-            height={80}
-            className="rounded-full mx-auto shadow-lg shadow-black/40"
-          />
-        </motion.div>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

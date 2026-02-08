@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 
 export default function CTABanner() {
@@ -29,13 +28,6 @@ export default function CTABanner() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <Image
-            src="/images/logo.jpg"
-            alt="Zaichik Crafts"
-            width={48}
-            height={48}
-            className="rounded-full mx-auto mb-8 opacity-90"
-          />
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-off-white mb-6">
             Ready for Something Built to Last?
           </h2>

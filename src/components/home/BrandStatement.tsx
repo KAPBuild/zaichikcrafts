@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function BrandStatement() {
   return (
@@ -13,13 +12,6 @@ export default function BrandStatement() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
         >
-          <Image
-            src="/images/logo.jpg"
-            alt="Zaichik Crafts"
-            width={56}
-            height={56}
-            className="rounded-full mx-auto mb-8 opacity-80"
-          />
           <blockquote className="font-heading text-2xl sm:text-3xl md:text-4xl text-charcoal leading-snug mb-8">
             I build furniture that will outlast me. That&rsquo;s the only standard worth having.
           </blockquote>
