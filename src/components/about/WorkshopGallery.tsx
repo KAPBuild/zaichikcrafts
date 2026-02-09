@@ -35,7 +35,7 @@ export default function WorkshopGallery() {
             <span className="text-brand-red">Old-world heritage.</span> American craftsmanship.
           </p>
           <p className="text-warm-gray text-lg leading-relaxed font-body max-w-2xl mx-auto">
-            Every piece that leaves my workshop is made in America, by me, using solid wood and proven techniques. That&rsquo;s not a marketing slogan. That&rsquo;s a guarantee.
+            Every piece that leaves my workshop is made in America, by me, using solid wood and techniques passed down through three generations. That&rsquo;s not a marketing slogan. That&rsquo;s a guarantee.
           </p>
         </motion.div>
 

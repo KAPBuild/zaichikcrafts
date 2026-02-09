@@ -6,18 +6,18 @@ import Image from 'next/image'
 const chapters = [
   {
     number: '01',
-    title: 'The Foundation',
-    text: `I grew up watching skilled hands turn raw wood into something lasting. That left a mark. I learned early that real craftsmanship is about precision, patience, and respect for the material. Every piece I build carries that foundation.`,
+    title: 'The Engineer',
+    text: `My grandfather was an engineer in Russia — a man who understood that everything worth building starts with precision. He worked with his hands his whole life, and he passed that down. Before I ever touched a piece of wood, I understood from him that craftsmanship isn't about decoration. It's about structure, integrity, and doing things right. He's the reason I build the way I do.`,
   },
   {
     number: '02',
-    title: 'The Method',
-    text: `I work with solid wood — no particle board, no shortcuts. Every joint is cut with intention. Every surface is finished by hand. The techniques I use have been proven across generations. They produce furniture and woodwork that gets stronger with time, not weaker.`,
+    title: 'A New Country',
+    text: `I came to America young, carrying pieces of a world I barely knew. My mother and stepfather raised me here and gave me everything — the work ethic, the values, the belief that you can build something from nothing. They've been incredible since the day we left Russia. Everything I am starts with them.`,
   },
   {
     number: '03',
-    title: 'The Standard',
-    text: `If it leaves my workshop, it's built to last. Period. I stand behind every piece with my name. Whether it's a coffee table, a wall piece, or a custom commission — the standard is the same. Built right, built once.`,
+    title: 'The Craft',
+    text: `The memory of watching woodwork as a child never left me. My grandfather's precision. My father's workshop. It all came back through my hands. Now I build — every piece made in my workshop, using solid wood and techniques that honor three generations of making things that last. This isn't a hobby. It's heritage.`,
   },
 ]
 
@@ -25,7 +25,7 @@ export default function VannyaStory() {
   return (
     <section className="py-24 md:py-32 bg-charcoal">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-        {/* Photo + intro */}
+        {/* Grandparents photo + intro */}
         <div className="mb-24 md:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -34,30 +34,33 @@ export default function VannyaStory() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
           >
-            {/* Workshop photo */}
+            {/* Grandparents photo */}
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/workshop/workshop.jpeg"
-                  alt="Zaichik Crafts workshop"
+                  src="/images/family/grandparents.jpeg"
+                  alt="Vannya's grandparents — the engineer and his wife"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
+              <p className="text-off-white/40 text-xs mt-3 text-center italic font-body">
+                My grandparents. Where it all began.
+              </p>
             </div>
 
             {/* Intro text */}
             <div>
               <p className="text-wood-gold uppercase tracking-[0.3em] text-sm mb-6 font-body">
-                About Zaichik Crafts
+                Three Generations Deep
               </p>
               <h2 className="font-heading text-4xl md:text-5xl text-off-white mb-8 leading-[1.1]">
-                Real wood. Real craft.
+                I build things that matter.
               </h2>
               <p className="text-off-white/70 text-lg md:text-xl leading-relaxed font-body">
-                I&rsquo;m Vannya Sokolov, and I build handcrafted woodwork out of my American workshop. Every piece is made from solid wood, finished by hand, and built to a standard I&rsquo;d stake my name on. No mass production. No middlemen. Just craftsmanship you can see and feel.
+                My name is Vannya Sokolov. I&rsquo;m a third-generation craftsman. My grandfather was an engineer in Russia who built with precision and purpose. That legacy came through my father&rsquo;s workshop and into my hands. I came to America as a child, raised by my incredible mother and stepfather, and carried that heritage forward into everything I build today.
               </p>
             </div>
           </motion.div>
@@ -105,7 +108,7 @@ export default function VannyaStory() {
           className="mt-24 pt-12 border-t border-white/10"
         >
           <p className="font-heading text-2xl md:text-3xl text-off-white leading-relaxed max-w-2xl">
-            <span className="text-brand-red">Zaichik Crafts</span> — where tradition meets American craftsmanship. Built to last.
+            <span className="text-brand-red">Zaichik Crafts</span> is where old-world heritage meets American craftsmanship. Three generations of building things that last.
           </p>
         </motion.div>
       </div>
