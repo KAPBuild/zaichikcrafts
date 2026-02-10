@@ -47,7 +47,7 @@ export default function VannyaStory() {
                 />
               </div>
               <p className="text-off-white/40 text-xs mt-3 text-center italic font-body">
-                My grandparents. Where it all began.
+                My great-grandparents. Where it all began.
               </p>
             </div>
 
